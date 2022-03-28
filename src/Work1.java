@@ -19,6 +19,8 @@ public class Work1 {
         System.out.println(negative(-10));
         sayHello(" Miely otasairus!");
 
+        Work1 work1 = new Work1();
+        work1.leapYear(2000);
 
 
 
@@ -57,5 +59,11 @@ public class Work1 {
     public static void sayHello (String name){
         System.out.println("Hello"+ name);
     }
-
+      public  void  leapYear (int year){
+        if (year%4 == 0){
+            if (year%100 == 0 && year % 400 == 0 ){
+                System.out.println("It's leap year");
+            }
+        }else System.out.println("it's not leap year");
+      }
 }
