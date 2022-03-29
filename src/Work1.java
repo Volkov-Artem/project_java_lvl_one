@@ -20,14 +20,14 @@ public class Work1 {
         sayHello(" Miely otasairus!");
 
         Work1 work1 = new Work1();
-        work1.leapYear(2000);
+        work1.leapYear(2524);
 
 
 
     }
 
-    public static int multiplication(int a, int b, int c, int d ){
-        int multi = 0;
+    public static double multiplication(int a, int b, double c, int d ){
+        double multi = 0;
         multi = a*(b + (c / d));
         return multi;
     }
@@ -60,10 +60,10 @@ public class Work1 {
         System.out.println("Hello"+ name);
     }
       public  void  leapYear (int year){
-        if (year%4 == 0){
-            if (year%100 == 0 && year % 400 == 0 ){
+
+            if ( year % 4 == 0 &&  year%100 != 0 || year % 400 == 0 ){
                 System.out.println("It's leap year");
-            }
-        }else System.out.println("it's not leap year");
-      }
+            }else System.out.println("it's not leap year");
+        }
+
 }
