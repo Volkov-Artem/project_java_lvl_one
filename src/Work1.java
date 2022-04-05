@@ -59,6 +59,8 @@ public class Work1 {
     public static void sayHello (String name){
         System.out.println("Hello"+ name);
     }
+
+
       public  void  leapYear (int year){
 
             if ( year % 4 == 0 &&  year%100 != 0 || year % 400 == 0 ){
