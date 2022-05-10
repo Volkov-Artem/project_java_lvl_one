@@ -20,14 +20,11 @@ public class Work2Array {
     public static void changeNumber() {
         int[] array = {0, 1, 0, 1, 0, 0, 0, 1, 1, 0};
         for (int i = 0; i < array.length; i++) {
-
             if (array[i] == 0) {
                 array[i] = 1;
             } else if (array[i] == 1) {
                 array[i] = 0;
             }
-
-
         }
         System.out.println(Arrays.toString(array));
     }
@@ -58,15 +55,12 @@ public class Work2Array {
 
     public static void twoDimensionalArray() {    //заполнение массива по диагонали при помощи вложенных циклов
         int[][] array = new int[9][9];
-
         for (int i = 0; i < array.length; i++) {
             for (int j = 0, g = array.length - 1; j < array.length; j++, g--) {
                 if (i == j || i == g) {
                     array[i][j] = 1;
-
                 }
                 System.out.print(array[i][j] + " ");
-
             }
             System.out.println();
         }
@@ -151,12 +145,6 @@ public class Work2Array {
             System.out.print(i1);
         }
     }
-
-
-
-
-
-
     }
 
 
