@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Task3 {
     public static void main(String[] args) {
-        guessTheNumber();
+
+       // guessTheNumber();
+        guessWord();
     }
 
 
@@ -22,7 +24,7 @@ public class Task3 {
                 System.out.println(" Введите число от 0 до 9");
                 number = scan.nextInt();
                 if(number < 0 || number > 9){
-                    System.out.println("Вы угазали число вне диапазона. Пожалуйста попробуйте снова \n");
+                    System.out.println("Вы указали число вне диапазона. Пожалуйста попробуйте снова \n");
                     continue;
                 }
                 if (number == anyNumber){
@@ -45,6 +47,49 @@ public class Task3 {
                 answer = word.nextLine().toLowerCase(Locale.ROOT);
         }while (str.equals(answer));
         System.out.println("Спасибо за игру, досвидания");
+    }
 
+    public static void guessWord (){
+        String [] words = new String []{"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry", "garlic", "grape", "melon",
+                "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
+        Random rand = new Random();
+        int anyWord = rand.nextInt(words.length);
+        System.out.println("приветствие иусловия игры");
+         String someWord = word(words, anyWord);
+        Scanner scan = new Scanner(System.in);
+        char [] guessTheWord = {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'};
+        for (;;) {
+           String answer = scan.nextLine().toLowerCase();
+
+            for (int i = 0; i < someWord.length(); i++) {
+               char symb = someWord.charAt(i);
+                for (int j = 0; j < answer.length(); j++) {
+                    char symbAnser = answer.charAt(j);
+                    if(symbAnser == symb) {
+                        guessTheWord[i] = symbAnser;
+                        break;
+                    }
+                }
+
+            }
+            System.out.println(guessTheWord);
+
+           if (answer.equals(someWord)){
+               System.out.println("поздравление с победой" + someWord);
+               break;
+           }
+
+
+        }
+
+
+    }
+
+    public static String word (String[] words, int anyWord) {
+        String hiddenWord = "";
+        for (int i = anyWord; i <= anyWord; i++) {
+            hiddenWord = words[i];
+        }
+        return hiddenWord;
     }
 }
